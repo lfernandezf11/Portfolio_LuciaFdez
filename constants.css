@@ -1,0 +1,86 @@
+:root {
+    /* Paleta de Colores */
+    --color-primary: #0f0f0f;
+    --color-secondary: #888888;
+    --color-tertiary: #f1f1f1;
+    --color-accent-orange: #f26003;
+    --color-accent-lilac: #8a38f5;
+    --color-details: #ffec3c;
+
+    /* Degradados */
+    --bg-body: linear-gradient(180deg,
+            #000000 0%,
+            #0f0f0f 50%,
+            #282828 100%);
+    --bg-hero: conic-gradient(from 180deg at 45% 105%,
+            #f26003 30%,
+            #8a38f5 80%);
+
+    /* Font Families */
+    --font-display: "Figtree", sans-serif;
+    --font-body: "Quicksand", sans-serif;
+
+    /* Sizes y Line Heights */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-xs--line-height: calc(1 / 0.75);
+    /* ≈ 1.333 */
+
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-sm--line-height: calc(1.25 / 0.875);
+    /* ≈ 1.429 */
+
+    --text-base: 1rem;
+    /* 16px */
+    --text-base--line-height: calc(1.5 / 1);
+    /* 1.5 */
+
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-xl--line-height: calc(1.75 / 1.25);
+    /* 1.4 */
+
+    --text-3xl: 1.875rem;
+    /* 30px */
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    /* 1.2 */
+
+    --text-5xl: 3rem;
+    /* 48px */
+    --text-5xl--line-height: 1;
+
+    --text-8xl: 6rem;
+    /* 96px */
+    --text-8xl--line-height: 1;
+
+    --text-9xl: 8rem;
+    /* 128px */
+    --text-9xl--line-height: 1;
+
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+
+    /* Atajos para los estilos de los textos */
+    /* Sintasis >> font: <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>; */
+
+    --text-h2: normal normal var(--font-weight-regular) var(--text-9xl) / var(--text-9xl--line-height) var(--font-display);
+
+    --text-h3: normal normal var(--font-weight-regular) var(--text-8xl) / var(--text-8xl--line-height) var(--font-display);
+
+    --text-h4: normal normal var(--font-weight-bold) var(--text-5xl) / var(--text-5xl--line-height) var(--font-display);
+
+    --font-text-3xl: normal normal var(--font-weight-semibold) var(--text-3xl) / var(--text-3xl--line-height) var(--font-body);
+
+    --font-text-xl: normal normal var(--font-weight-medium) var(--text-xl) / var(--text-xl--line-height) var(--font-body);
+
+    --font-text-base: normal normal var(--font-weight-medium) var(--text-base) / var(--text-base--line-height) var(--font-body);
+
+    --font-text-sm: normal normal var(--font-weight-regular) var(--text-sm) / var(--text-sm--line-height) var(--font-body);
+
+    --font-text-xs: normal normal var(--font-weight-semibold) var(--text-xs) / var(--text-xs--line-height) var(--font-body);
+}
