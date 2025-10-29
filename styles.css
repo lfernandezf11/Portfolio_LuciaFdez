@@ -4,7 +4,11 @@
   box-sizing: border-box;
 }
 
-
+/* Importante para no generar scroll horizontal inncesario. Al no aplicar la regla en *, 
+no afecta a contenedores con scroll horizontal legítimo (ej.: carrusel) */
+html, body {
+  overflow-x: hidden;
+}
 
 html {
   font: var(--font-text-base);
@@ -14,6 +18,7 @@ body {
   background: var(--bg-body);
   color: var(--color-tertiary);
 }
+
 
 main {
   display: flex;
@@ -46,9 +51,6 @@ h4 {
 }
 
 
-
-
-
 button {
   align-self: flex-start;
   background: #8a38f5;
@@ -69,8 +71,6 @@ img {
   max-width: 100%;
   display: block;
   /* Necesario, porque las img por defecto tienen display inline*/
-  height: auto;
-  /* Por defecto para img, pero explicitamos para que otras reglas css no interfieran con el layout de esta img concreta*/
 }
 
 a {
@@ -96,13 +96,26 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11, 12, 16, 0.6);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid #262839;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  color: var(--color-tertiary);
+  background: var(--color-accent-lilac);
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  background: var(--color-accent-orange);
 }
 
 .nav-links {
@@ -124,7 +137,6 @@ a {
 
 .hero {
   min-height: 70vh;
-  padding: none;
   display: flex;
   width: 100%;
   align-items: center;
@@ -225,22 +237,22 @@ a {
 
 
 /* ABOUT */
-
-
 .about-me .content {
   display: flex;
-  gap: 3rem;              
-  align-items: stretch; /* asegura que las columnas tengan la misma altura */
+  gap: 3rem;
+  align-items: stretch;
+  /* asegura que las columnas tengan la misma altura */
 }
 
 .about-me-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1 1 55%;          /* ancho relativo */
+  flex: 1 1 55%;
+  /* ancho relativo */
 }
 
-.about-me-info > img {
+.about-me-info>img {
   /* sticker */
   padding-top: 2rem;
   padding-left: 1rem;
@@ -248,17 +260,23 @@ a {
   rotate: -16deg;
   transform-origin: center;
 }
+
 .about-me-info .infoText {
-  margin-top: auto;     /* Empuja el bloque de texto al fondo */
+  margin-top: auto;
+  /* Empuja el bloque de texto al fondo */
 }
+
 .about-me-img {
   flex: 1 1 45%;
-  max-width: 40rem;       /* igual que el valor de escritorio */
+  max-width: 40rem;
+  /* igual que el valor de escritorio */
 }
 
 .about-me-img img {
-  width: 100%;            /* redimensiona con el contenedor */
+  width: 100%;
+  /* redimensiona con el contenedor */
   height: auto;
+  /* Por defecto para img, pero explicitamos para que otras reglas css no interfieran con el layout de esta img concreta*/
 }
 
 #about-me-subtitle {
@@ -269,7 +287,8 @@ a {
   font: var(--font-text-3xl);
   display: inline-block;
   position: relative;
-  white-space: nowrap; /* evita los saltos de línea dentro de "in progress" */
+  white-space: nowrap;
+  /* evita los saltos de línea dentro de "in progress" */
   opacity: 0;
   transform: translateY(0.3rem);
   transition: opacity .3s ease, transform .3s ease;
@@ -278,4 +297,41 @@ a {
 #about-me-subtitle:hover .progress {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* Puntos de ruptura para responsive
+        Teléfonos pequeños: 320px;
+        Mayoría de teléfonos: 480px;
+        Tablet: 768px; 
+*/
+
+/* MAYORÍA DE TELÉFONOS */
+@media (width < 480px) {
+
+  /* Botón toggle para plegar/desplejar con enlaces de la navbar */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
 }
