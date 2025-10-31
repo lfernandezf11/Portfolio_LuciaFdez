@@ -409,9 +409,8 @@ a.icon-link.figma {
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
-  padding: 2.1rem 0rem 1.5rem 3rem;
-  min-width: 400px;
-  min-height: 160px;
+
+
 }
 
 .info-data {
@@ -502,6 +501,11 @@ a.icon-link.figma {
     flex-direction: column;
     margin-top: 4rem;
     rotate: -16deg;
+  }
+
+  #infoText {
+    margin-bottom: auto;
+    margin-top: 0;
   }
 }
 
@@ -607,10 +611,19 @@ a.icon-link.figma {
     padding: 0rem 1rem;
   }
 
+  .contact-box {
+    width: 100%;
+    padding: 2rem;
+  }
+
   .contact-info{
     width: 100%;
   }
   
+  .contact-info .info-data {
+    flex-direction: column;
+  }
+
   .contact h2 {
     padding: 1rem;
     text-align: start;
