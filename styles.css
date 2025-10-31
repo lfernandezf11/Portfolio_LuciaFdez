@@ -159,7 +159,6 @@ a {
   background: url('./assets/noisefilter.png') repeat;
   opacity: 1;
   mix-blend-mode: overlay;
-  /* o soft-light / multiply */
 }
 
 .hero img {
@@ -450,6 +449,15 @@ a {
   opacity: 0.5;
 }
 
+/* Título mostrado en versión escritorio */
+.desktop{
+    display: block;
+  }
+
+.mobile {
+    display:none;
+  }
+
 
 /*  RESPONSIVE -------------------- */
 
@@ -535,6 +543,8 @@ a {
   }
 
   /* Contact */
+  /* Título mostrado en vista móvil */
+  
   .contact{
     width: 100%;
     padding: 2rem 0rem 0rem 0rem;
@@ -546,21 +556,27 @@ a {
   align-items: center;
   gap: 2rem;
   width: 100%;
-
   }
 
   .contact-form {
     width: 100%;
-    padding: 1rem;
+    padding: 0rem 1rem;
   }
 
-  .contact-info .section-header {
-    padding-bottom: 1rem;
+  .contact-info{
+    width: 100%;
   }
-
-  .contact-info h2 {
+  
+  .contact h2 {
     padding: 1rem;
     text-align: start;
+  }
+  .desktop{
+    display: none;
+  }
+
+  .mobile {
+    display:block;
   }
 
 }
