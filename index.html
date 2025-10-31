@@ -20,19 +20,20 @@
 <body>
 
   <header class="navbar">
-  <img class="logo" src="assets/navIcon.png" alt="Helif logo">
-  <button class="menu-toggle" aria-controls="nav-links" aria-expanded = "false" aria-label="Abrir menú">
-    <i class="fa fa-bars"></i>
-  </button>
-  <nav class="nav-links">
-    <a href="#about-me">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <img class="logo" src="assets/navIcon.png" alt="Helif logo">
+    <button class="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Abrir menú">
+      <i class="fa fa-bars"></i>
+    </button>
+    <nav class="nav-links">
+      <a href="#about-me">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
   <section class="hero" id="hero">
     <img src="/assets/heroIcon.png" alt="Logo Helif:">
+    <h3>web dev.</h3>
   </section>
 
   <main>
@@ -47,12 +48,14 @@
         <div class="about-me-info">
           <img src="/assets/sticker.png" alt="Hello, my name is Lucía Fernández sticker">
           <div id="infoText">
-          <p class="text-3xl">What I am Good at<p>
-          <p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat distinctio qui officia nostrum magni
-            ipsam harum, soluta ratione, quasi dolor facere debitis quas odit. Quas laudantium obcaecati eius impedit
-            illo?
-        </p>
-            </div>
+            <p class="text-3xl">What I am Good at
+            <p>
+            <p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat distinctio qui officia
+              nostrum magni
+              ipsam harum, soluta ratione, quasi dolor facere debitis quas odit. Quas laudantium obcaecati eius impedit
+              illo?
+            </p>
+          </div>
         </div>
         <div class="about-me-img">
           <img src="/assets/portrait.jpg" alt="Portrait of Lucía">
@@ -60,8 +63,8 @@
       </div>
     </section>
 
-<section class="projects" id="projects">
-    <div class="section-header">
+    <section class="projects" id="projects">
+      <div class="section-header">
         <h2>My Projects</h2>
         <h3>Come and Watch!</h3>
       </div>
@@ -102,6 +105,57 @@
       </div>
     </section>
   </main>
+
+  <section class="contact" id="contact">
+
+    <div class="contact-grid">
+      <!-- Formulario -->
+      <form class="contact-form">
+        <div class="field-row">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="field-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field-row">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="field-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">SUBMIT</button>
+      </form>
+
+      <!-- Título de sección e info de contacto -->
+      <div class="contact-info">
+        <div class="section-header">
+          <h2>Get in Touch</h2>
+        </div>
+        <div class="contact-box">
+          <div class="info-data">
+            <div class="info-col">
+              <h4>email</h4>
+              <div class="info-desc">fdezflo92@gmail.com</div>
+            </div>
+            <div class="info-col">
+              <h4>phone</h4>
+              <div class="info-desc">+34 665 997 452</div>
+            </div>
+          </div>
+          <div class="info-socials">
+            <a href="#" aria-label="Instagram" disabled><i class="fa fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- FOOTER -->
   <footer class="font-text-sm">
