@@ -42,6 +42,7 @@ footer {
 h2 {
   font: var(--text-h2);
   text-transform: uppercase;
+  
 }
 
 h3 {
@@ -66,7 +67,6 @@ button {
 
 button:hover {
   background: var(--color-accent-orange);
-
 }
 
 img {
@@ -134,7 +134,7 @@ a {
 }
 
 .nav-links a:hover {
-  background: #8a38f5;
+  background: var(--color-accent-lilac);
 }
 
 /* HERO: MARCA Y GRADIENTE DE FONDO --------------------------------- */
@@ -178,6 +178,7 @@ a {
   overflow: hidden;
 }
 
+/* Secciones */
 .section-header {
   display: flex;
   flex-direction: column;
@@ -271,18 +272,17 @@ a {
   flex: 1 1 18rem;
   display: flex;
   flex-direction: column;
-  background: #f26003;
-  border: 1px solid #262839;
+  background: var(--color-accent-orange);
   border-radius: 1rem;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .project-card:hover {
   transform: translateY(-0.2rem);
   transition: 0.3 ease-out;
   box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.35);
-  background: #8a38f5;
+  background: var(--color-accent-lilac);
 }
 
 .project-card img {
@@ -296,7 +296,7 @@ a {
 }
 
 .project-title {
-  font-size: 1.25rem;
+  font: var(--font-text-3xl);
   margin: 1rem;
 }
 
@@ -304,28 +304,32 @@ a {
   margin: 0 1rem 1.5rem;
   display: flex;
   gap: 1.5rem;
-
 }
 
 .project-links a {
-  color: #ffffff;
-  font-size: 1.8rem;
+  color: var(--color-tertiary);
+  font-size: 50px;
 }
 
 .project-links a:hover {
-  color: #f26003;
+  color: var(--color-details);
   transform: scale(1.2);
 }
 
 .project-links img {
-  width: 1.8rem;
-  height: auto;
+  width: 50px;
+  height: 50px;
+  align-content: center;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
 
 .project-links img:hover {
   transform: scale(1.2);
+}
+
+a.icon-link.figma {
+  align-content: center;
 }
 
 /* CONTACT ---------------------------------------- */
@@ -370,18 +374,16 @@ a {
 .field-row textarea {
   background: transparent;
   border: none;
-  border-bottom: 2px solid var(--color-tertiary, #fff);
+  color: var(--color-tertiary);
+  border-bottom: 2px solid var(--color-tertiary);
   outline: none;
-  font-size: 1.12rem;
-  color: var(--color-tertiary, #fff);
   padding: 0.35rem 0 0.35rem 0;
   transition: border-color 0.25s;
-  font-family: var(--font-body, 'Quicksand', Arial, sans-serif);
 }
 
 .field-row input:focus,
 .field-row textarea:focus {
-  border-bottom: 2px solid var(--color-accent-lilac, #8a38f5);
+  border-bottom: 2px solid var(--color-details);
 }
 
 /* Panel derecho */
@@ -396,8 +398,9 @@ a {
 .contact-info h2 {
   padding-right: 4rem;
 }
+
 .contact-box {
-  background: var(--color-tertiary, #fff);
+  background: var(--color-tertiary);
   border-radius: 2.2rem 2.2rem 0 0;
   box-shadow: 0 0 44px rgba(0, 0, 0, 0.10);
   display: flex;
@@ -444,7 +447,7 @@ a {
   font-size: 50px;
   font-weight: bold;
   color: var(--color-primary);
-  /* Los marcamos como inactivos, de momento */
+  /* Marcamos los enlaces como inactivos, de momento */
   pointer-events: none;
   opacity: 0.5;
 }
@@ -473,7 +476,9 @@ a {
   }
 }
 
+
 /* MAYORÍA DE TELÉFONOS */
+
 @media (max-width: 480px) {
 
   main {
@@ -485,9 +490,18 @@ a {
     background: var(--color-details);
   }
 
+  /* Disminución de tamaños para versión móvil*/
   h2 {
-    font: var(--text-h3); /*En versión móvil, todas las cabeceras disminuyen de tamaño de texto*/
+    font: var(--text-h3); 
+    hyphens: auto; /* Salto de línea por sílabas para asegurar visibilidad en versión móvil*/
   }
+
+  h3 {
+    font: var(--text-h4);
+    text-transform: lowercase;
+  }
+
+  /* Barra de navegación ---------------------------*/
   /* Botón toggle para plegar/desplejar con enlaces de la navbar */
   .navbar {
     position: relative;
@@ -513,8 +527,7 @@ a {
     display: block;
   }
 
-
-  /* Hero */
+  /* Hero --------------------------------------*/
   .hero img {
     max-width: 95%;
     padding-top: 2rem;
@@ -526,6 +539,7 @@ a {
     display: none;
   }
 
+  /* About me -----------------------------------*/
   .about-me .content {
     flex-direction: column;
   }
@@ -542,15 +556,17 @@ a {
     margin-top: 3rem;
   }
 
-  /* Contact */
-  /* Título mostrado en vista móvil */
-  
-  .contact{
+  /* Projects ------------------------------- */
+  .projects {
+    width: 100%;
+    padding: 1rem;
+  }
+  /* Contact -------------------------------- */
+    .contact{
     width: 100%;
     padding: 2rem 0rem 0rem 0rem;
   }
   
-
   .contact-grid {
   flex-direction: column;
   align-items: center;
@@ -571,6 +587,8 @@ a {
     padding: 1rem;
     text-align: start;
   }
+
+  /* Título mostrado en vista móvil */
   .desktop{
     display: none;
   }
@@ -579,14 +597,4 @@ a {
     display:block;
   }
 
-}
-
-
-/* PANTALLAS MUY PEQUEÑAS */
-@media (max-width: 320px) {
-
-  /* Hero */
-  .hero img {
-    align-content: center;
-  }
 }
