@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 2px solid red !important;
+  /* outline: 2px solid red !important; */
  
 }
 
@@ -206,10 +206,11 @@ a {
   /* ancho relativo */
 }
 
-.about-me-info>img {
+.about-me-info img {
   /* sticker */
   padding-top: 2rem;
   padding-left: 1rem;
+  margin-bottom: 3rem;
   max-width: 70%;
   rotate: -16deg;
   transform-origin: center;
@@ -469,16 +470,27 @@ a.icon-link.figma {
         Mayoría de teléfonos: 480px;
         Tablet: 768px; 
 */
+
 /* TABLET */
 @media (max-width: 768px) {
+  main{
+    gap: 5rem;
+  }
   .hero img {
     max-width: 70%;
+  }
+
+  .about-me .sticker-wrapper {
+    margin-bottom: 3rem;
+  }
+
+  .about-me-info img {
+    padding:0;
   }
 }
 
 
 /* MAYORÍA DE TELÉFONOS */
-
 @media (max-width: 480px) {
 
   main {
@@ -544,17 +556,17 @@ a.icon-link.figma {
     flex-direction: column;
   }
 
-  .about-me-info>img {
-    width: 100%;
-    rotate: -16deg;
-    transform-origin: center;
-    align-self: center;
+  .about-me .section-header {
+    padding: 0rem 1rem;
   }
 
-  .about-me-info #infoText {
-    padding: 0rem 1.5rem;
-    margin-top: 3rem;
+  .sticker-wrapper {
+    margin: 3rem 0rem;
+    translate: -2rem; /* Desplaza el sticker a la izquierda para que se vea el contenido completo */
+    width: 152%; /* Los picos del sticker quedan fuera de la vista*/
   }
+
+  
 
   /* Projects ------------------------------- */
   .projects {
@@ -595,6 +607,10 @@ a.icon-link.figma {
 
   .mobile {
     display:block;
+  }
+
+  #infoText.mobile {
+    padding: 0rem 1rem;   
   }
 
 }
